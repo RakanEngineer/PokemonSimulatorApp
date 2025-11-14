@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace PokemonSimulatorApp
 {
-    internal class Attack
+    public class Attack
     {
-        private string Name { get; set; }
+        public string Name { get; set; }
         public ElementType Type { get; set; }
         private int BasePower { get; set; }
 

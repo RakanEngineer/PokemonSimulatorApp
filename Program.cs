@@ -17,6 +17,9 @@
             Attack solarBeam = new Attack("Solar Beam", ElementType.Grass, 4);
 
             flamethrower.Use(1);
+            waterGun.Use(1);
+            vineWhip.Use(1);
+            
         }
     }
 }
