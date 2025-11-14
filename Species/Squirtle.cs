@@ -1,0 +1,17 @@
+﻿using PokemonSimulatorApp.Types;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PokemonSimulatorApp.Species
+{
+    public class Squirtle : WaterPokemon
+    {
+        public Squirtle(int level, List<Attack> attacks)
+            : base("Squirtle", level, attacks)
+        {
+        }
+    }
+}

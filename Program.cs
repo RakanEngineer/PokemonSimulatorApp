@@ -1,4 +1,6 @@
-﻿namespace PokemonSimulatorApp
+﻿using PokemonSimulatorApp.Species;
+
+namespace PokemonSimulatorApp
 {
     internal class Program
     {
@@ -19,7 +21,11 @@
             flamethrower.Use(1);
             waterGun.Use(1);
             vineWhip.Use(1);
-            
+            Console.WriteLine("---------------------------------");
+
+            var charmander = new Charmander(5, new List<Attack> { flamethrower, ember,waterGun });
+            charmander.RaiseLevel();
+            charmander.RandomAttack();
         }
     }
 }

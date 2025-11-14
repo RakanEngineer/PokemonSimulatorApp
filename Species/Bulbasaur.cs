@@ -1,0 +1,17 @@
+﻿using PokemonSimulatorApp.Types;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PokemonSimulatorApp.Species
+{
+    public class Bulbasaur : GrassPokemon
+    {
+        public Bulbasaur(int level, List<Attack> attacks)
+            : base("Bulbasaur", level, attacks)
+        {
+        }
+    }
+}
