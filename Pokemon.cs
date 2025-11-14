@@ -11,7 +11,8 @@ namespace PokemonSimulatorApp
     {
         private string name;
         private int level;
-
+        public ElementType Type { get; set; }
+        public List<Attack> Attacks { get; private set; }
         public string Name
         {
             get => name;
@@ -32,8 +33,6 @@ namespace PokemonSimulatorApp
                 level = value;
             }
         }
-        public ElementType Type { get; set; }
-        public List<Attack> Attacks { get; private set; }
 
         public Pokemon(string name, int level, ElementType type, List<Attack> attacks)
         {
@@ -48,6 +47,7 @@ namespace PokemonSimulatorApp
         }
         public void RandomAttack()
         {
+            Console.WriteLine("----------RandomAttack-----------");
             Random rand = new Random();
             int attackIndex = rand.Next(Attacks.Count);
             var attack = Attacks[attackIndex];
@@ -56,13 +56,14 @@ namespace PokemonSimulatorApp
         }
         public void Attack()
         {
-            Console.WriteLine($"{Name}, choose an attack:");
+            Console.WriteLine($"It's {Name}'s turn! Type: {Type}, Level: {Level}");
+            Console.WriteLine("----------Choose your attack!----------");
+            Console.WriteLine($"{Name}, choose an attack: ");
 
             for (int i = 0; i < Attacks.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {Attacks[i].Name} ({Attacks[i].Type})");
+                Console.WriteLine($"{i + 1}.{Attacks[i].Name} ({Attacks[i].Type}) ");
             }
-
             Console.Write("Enter attack number: ");
 
             if (!int.TryParse(Console.ReadLine(), out int choice) ||
@@ -80,6 +81,7 @@ namespace PokemonSimulatorApp
         {
             Level++;
             Console.WriteLine($"{Name} has leveled up to level {Level}!");
+            Console.WriteLine("----------------------------------------");
         }
     }
 }

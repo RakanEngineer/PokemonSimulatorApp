@@ -18,6 +18,8 @@ namespace PokemonSimulatorApp.Species
 
         public void Evolve()
         {
+            Console.WriteLine();
+            Console.WriteLine("----------Evolution----------");
             string oldName = Name;
             Name = "Charmeleon";
             Level += 10;
