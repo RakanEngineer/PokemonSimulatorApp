@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Welcome to the Pokemon Simulator!");
+            Console.WriteLine("---------------------------------");
+            var flamethrower = new Attack("Flamethrower", ElementType.Fire, 12);
+            flamethrower.Use(1);
         }
     }
 }
