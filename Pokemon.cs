@@ -3,33 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace PokemonSimulatorApp
 {
     public abstract class Pokemon
     {
-        private string Name;
-        private int Level;
+        private string name;
+        private int level;
 
-        public string GetName()
+        public string Name
         {
-            return Name;
+            get => name;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value) || value.Length < 2 || value.Length > 15)
+                    throw new ArgumentException("Name must be between 2 and 15 characters.");
+                name = value;
+            }
         }
-        public void SetName(string name)
+        public int Level
         {
-            if (string.IsNullOrWhiteSpace(name) || name.Length < 2 || name.Length > 15)
-                throw new ArgumentException("Name must be between 2 and 15 characters.");
-            Name = name;
-        }
-        public int GetLevel()
-        {
-            return Level;
-        }
-        public void SetLevel(int level)
-        {
-            if (level < 1)
-                throw new ArgumentOutOfRangeException("Level must be at least 1.");
-            Level = level;
+            get => level;
+            set
+            {
+                if (value < 1)
+                    throw new ArgumentOutOfRangeException("Level must be at least 1.");
+                level = value;
+            }
         }
         public ElementType Type { get; set; }
         public List<Attack> Attacks { get; private set; }
