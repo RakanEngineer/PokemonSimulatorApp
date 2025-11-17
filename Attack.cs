@@ -11,7 +11,7 @@ namespace PokemonSimulatorApp
     {
         public string Name { get; set; }
         public ElementType Type { get; set; }
-        private int BasePower { get; set; }
+        internal int BasePower { get; set; }
 
         public Attack(string name, ElementType type, int basePower)
         {
@@ -19,7 +19,7 @@ namespace PokemonSimulatorApp
             Type = type;
             BasePower = basePower;
         }
-        public void Use(int level)
+        public virtual void Use(int level)
         {
             int totalPower = BasePower + level;
             Console.WriteLine($"{Name} hit with a total power of {totalPower}");
