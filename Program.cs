@@ -24,6 +24,10 @@ namespace PokemonSimulatorApp
             flamethrower.Use(1);
             waterGun.Use(1);
             vineWhip.Use(1);
+            // 2. (Legendary Attacks) !
+            LegendaryAttack legendaryFlamethrower = new LegendaryAttack(flamethrower);
+            LegendaryAttack legendaryWaterGun = new LegendaryAttack(waterGun);
+            LegendaryAttack legendaryVineWhip = new LegendaryAttack(vineWhip);
 
             var charmander = new Charmander(1, new List<Attack> { flamethrower, ember, waterGun });
             var squirtle = new Squirtle(2, new List<Attack> { waterGun, hydroPump, bubbleBeam });
