@@ -12,5 +12,9 @@ namespace PokemonSimulatorApp.Types
             : base(name, level, ElementType.Water, attacks)
         {
         }
+        public override void Speak()
+        {
+            Console.WriteLine($"{Name} says: Bulba bulba!");
+        }
     }
 }

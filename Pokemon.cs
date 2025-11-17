@@ -45,6 +45,10 @@ namespace PokemonSimulatorApp
 
             Attacks = attacks;
         }
+        public virtual void Speak()
+        {
+            Console.WriteLine("Generic Pokémon sound...");
+        }       
         public void RandomAttack()
         {
             Console.WriteLine("----------RandomAttack-----------");

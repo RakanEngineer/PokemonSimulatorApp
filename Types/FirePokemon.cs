@@ -11,6 +11,10 @@ namespace PokemonSimulatorApp.Types
         public FirePokemon(string name, int level, List<Attack> attacks)
             : base(name, level, ElementType.Fire, attacks)
         {
-        }       
+        }
+        public override void Speak()
+        {
+            Console.WriteLine($"{Name} says: Char char!");
+        }
     }
 }

@@ -11,6 +11,10 @@ namespace PokemonSimulatorApp.Types
         public GrassPokemon(string name, int level, List<Attack> attacks)
             : base(name, level, ElementType.Grass, attacks)
         {
-        }    
+        }
+        public override void Speak()
+        {
+            Console.WriteLine($"{Name} says: Squirtle squirtle!");
+        }
     }
 }
